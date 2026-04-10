@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8085";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://98.91.115.68:8085";
 
 export const fetchApi = async (endpoint: string, options: RequestInit = {}) => {
   const token = typeof window !== 'undefined' ? localStorage.getItem("token") : null;
