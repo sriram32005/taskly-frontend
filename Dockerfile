@@ -8,17 +8,17 @@ RUN npm install
 
 COPY . .
 
-RUN npm run dev
+RUN npm run build
 
-# # 2️⃣ Production stage
-# FROM node:20-alpine
+# 2️⃣ Production stage
+FROM node:20-alpine
 
-# WORKDIR /app
+WORKDIR /app
 
-# ENV NODE_ENV=production
+ENV NODE_ENV=production
 
-# COPY --from=builder /app ./
+COPY --from=builder /app ./
 
-# EXPOSE 3000
+EXPOSE 3000
 
-# CMD ["npm", "start"]
+CMD ["npm", "start"]
