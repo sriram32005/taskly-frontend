@@ -1,17 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import { api } from "../lib/api";
-import { saveToken } from "../utils/auth";
+import { api } from "../../lib/api";
+import { saveToken } from "../../utils/auth";
 import { useRouter } from "next/navigation";
 
-export default function Login() {
+export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
 
-  const handleLogin = async () => {
-    const res = await api("/login", "POST", { email, password });
+  const handleRegister = async () => {
+    const res = await api("/register", "POST", { email, password });
 
     if (res.token) {
       saveToken(res.token);
@@ -23,7 +23,7 @@ export default function Login() {
 
   return (
     <div style={{ padding: 20 }}>
-      <h2>Login</h2>
+      <h2>Register</h2>
 
       <input placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
       <br />
@@ -35,11 +35,7 @@ export default function Login() {
       />
       <br />
 
-      <button onClick={handleLogin}>Login</button>
-
-      <p onClick={() => router.push("/register")}>
-        Don’t have an account? Register
-      </p>
+      <button onClick={handleRegister}>Register</button>
     </div>
   );
 }
