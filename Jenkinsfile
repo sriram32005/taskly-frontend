@@ -49,7 +49,7 @@ pipeline {
                 docker run -d -p 80:3000 \
                   --name $CONTAINER_NAME \
                   --restart always \
-                  -e NEXT_PUBLIC_API_URL=http://taskly-backend:8085 \
+                  -e NEXT_PUBLIC_API_URL=http://98.91.115.68:8085 \
                   --network bridge \
                   $DOCKERHUB_USER/$IMAGE_NAME:$IMAGE_TAG
                 '''
