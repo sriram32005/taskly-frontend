@@ -49,7 +49,7 @@ pipeline {
                 docker run -d -p 80:3000 \
                   --name $CONTAINER_NAME \
                   --restart always \
-                  -e NEXT_PUBLIC_API_URL=http://172.17.0.1:8080
+                  -e NEXT_PUBLIC_API_URL=http://172.17.0.1:8085
                   $DOCKERHUB_USER/$IMAGE_NAME:$IMAGE_TAG
                 '''
             }
