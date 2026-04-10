@@ -1,4 +1,4 @@
-const BASE_URL =  process.env.NEXT_PUBLIC_API_URL || "http://98.91.115.68:8085";
+const BASE_URL = "http://98.91.115.68:8085";
 
 export const api = async (
   endpoint: string,
