@@ -18,9 +18,7 @@ pipeline {
 
         stage('Build Image') {
             steps {
-                dir('frontend') {
-                    sh 'docker build -t $DOCKERHUB_USER/$IMAGE_NAME:$IMAGE_TAG .'
-                }
+                sh 'docker build -t $DOCKERHUB_USER/$IMAGE_NAME:$IMAGE_TAG .'
             }
         }
 
