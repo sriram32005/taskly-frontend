@@ -18,7 +18,7 @@ pipeline {
 
         stage('Build Image') {
             steps {
-                sh 'docker build -t $DOCKERHUB_USER/$IMAGE_NAME:$IMAGE_TAG .'
+                sh 'docker build --build-arg NEXT_PUBLIC_API_URL=http://98.91.115.68:8085 -t $DOCKERHUB_USER/$IMAGE_NAME:$IMAGE_TAG .'
             }
         }
 
