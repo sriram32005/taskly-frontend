@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:8085";
+const BASE_URL =  process.env.NEXT_PUBLIC_API_URL || "http://localhost:8085";
 
 export const api = async (
   endpoint: string,
